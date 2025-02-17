@@ -60,7 +60,7 @@ public:
     bool is_numerator_greater() const;
     bool is_denominator_greater() const;
     */
-   rational_t factorial() const;
+    rational_t factorial() const; // Declaración de la función factorial
 
 private:
     // pauta de estilo [11]: nombre de los atributos seguido de "_"

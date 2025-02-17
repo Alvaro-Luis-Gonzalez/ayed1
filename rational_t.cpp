@@ -176,8 +176,6 @@ bool rational_t::is_denominator_greater() const {
     return den_ > num_;
 }
 */
-
-// Función factorial (solo para racionales que son enteros no negativos)
 rational_t rational_t::factorial() const {
 
     if (den_ != 1)
@@ -187,15 +185,21 @@ rational_t rational_t::factorial() const {
         }
     }
 
+
     int integer_value = num_/den_;
+
 
     if (integer_value < 0) {
         throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
     }
 
-    long long fact = 1; // Usar long long para evitar desbordamiento para factoriales grandes
-    for (int i = 2; i <= integer_value; ++i) {
-        fact *= i;
+    rational_t result(1, 1); // Inicializar con 1 (elemento neutro de la multiplicación)
+    rational_t current(num_, den_); // Empezar con el racional original
+
+    for (int i = integer_value; i >= 1; --i) {
+        result = result.multiply(current);
+        current.set_num(i - 1);  // Decrementar el numerador
     }
-    return rational_t(static_cast<int>(fact), 1);
+
+    return result;
 }

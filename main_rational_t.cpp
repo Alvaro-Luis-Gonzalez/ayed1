@@ -96,7 +96,8 @@ int main()
              << (y.is_denominator_greater() ? "true" : "false") << endl;
         */
 
-       
+        //Ejemplos de factorial
+        
         cout << "Factorial de x: ";
         try {
             x.factorial().write();
@@ -110,7 +111,7 @@ int main()
         } catch (const std::runtime_error& e) {
             cerr << e.what() << endl;
         }
-
+        
 
     } catch (const std::runtime_error& error) {
         cerr << "Error: " << error.what() << endl;
