@@ -5,12 +5,10 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              "C++ Programming Style Guidelines"
+//              https://geosoft.no/development/cppstyle.html
 
-
-// pauta de estilo: comentarios multilínea usando solo "/* */"
-
+// pauta de estilo [92]: comentarios multilínea usando solo "//"
 
 #pragma once
 
@@ -18,51 +16,52 @@
 #include <cassert>
 #include <cmath>
 
-# define EPSILON 1e-6 //Es decir , solo admitimos fallos despues de 6 digitos pasado coma
+// pauta de estilo [5]
+# define EPSILON 1e-6
 
 using namespace std;
 
-
-//iniciador de la clase
 class rational_t
 {
- // pautas de estilos: primero "public" y después "private"
-public: //métodos
- rational_t(const int = 0, const int = 1); //constructor
- ~rational_t() {} //Destructor
-  // pauta de estilo: indentación a 2 espacios
- // getters
- //Metodos para acceder a los atributos
- int get_num() const;
- int get_den() const;
-  // setters
- //Metodos para lectora y escritura por pantalla.
- void set_num(const int);
- void set_den(const int);
+// pautas de estilos [44] y [73]: primero "public" y después "private"
+public:
+    rational_t(const int = 0, const int = 1);
+    ~rational_t() {}
 
+    // pauta de estilo [71]: indentación a 2 espacios
+    // getters
+    int get_num() const;
+    int get_den() const;
 
- double value(void) const;
-//
+    // setters
+    void set_num(const int);
+    void set_den(const int);
 
- // FASE II
-bool is_equal(const rational_t&, const double precision = EPSILON) const;
-bool is_greater(const rational_t&, const double precision = EPSILON) const;
-bool is_less(const rational_t&, const double precision = EPSILON) const;
-bool is_one(const double precision = EPSILON) const;
+    double value(void) const;
 
+    // FASE II
+    bool is_equal(const rational_t&, const double precision = EPSILON) const;
+    bool is_greater(const rational_t&, const double precision = EPSILON) const;
+    bool is_less(const rational_t&, const double precision = EPSILON) const;
 
-  // FASE III
-rational_t add(const rational_t&);
-rational_t substract(const rational_t&);
-rational_t multiply(const rational_t&);
-rational_t divide(const rational_t&);
+    // FASE III
+    rational_t add(const rational_t&);
+    rational_t substract(const rational_t&);
+    rational_t multiply(const rational_t&);
+    rational_t divide(const rational_t&);
 
+    void write(ostream& = cout) const;
+    void read(istream& = cin);
 
+    // practicado en casa
+    /*
+    rational_t square_root() const;
+    rational_t power(int exponent) const;
+    bool is_numerator_greater() const;
+    bool is_denominator_greater() const;
+    */
 
-void write(ostream& = cout) const;
-void read(istream& = cin);
-private: //atributos
-
-// pauta de estilo: nombre de los atributos seguido de "_"
- int num_, den_;
+private:
+    // pauta de estilo [11]: nombre de los atributos seguido de "_"
+    int num_, den_;
 };
