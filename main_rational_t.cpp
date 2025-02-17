@@ -20,19 +20,10 @@
 #include <iostream>
 #include <cmath>
 
-
-
-
 // pauta de estilo : ficheros de cabecera agrupados y separados
 #include "rational_t.hpp"
 
-
-
-
 using namespace std;
-
-
-
 
 int main()
 {
@@ -73,7 +64,6 @@ a.multiply(b).write();
 cout << "a / b: ";
 a.divide(b).write();
   return 0;
-
 }
 
 
