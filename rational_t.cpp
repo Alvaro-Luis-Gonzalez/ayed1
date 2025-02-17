@@ -193,12 +193,12 @@ rational_t rational_t::factorial() const {
         throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
     }
 
-    rational_t result(1, 1); // Inicializar con 1 (elemento neutro de la multiplicación)
-    rational_t current(num_, den_); // Empezar con el racional original
+    rational_t result(1, 1);
+    rational_t current(num_, den_); 
 
     for (int i = integer_value; i >= 1; --i) {
         result = result.multiply(current);
-        current.set_num(i - 1);  // Decrementar el numerador
+        current.set_num(i - 1);
     }
 
     return result;
