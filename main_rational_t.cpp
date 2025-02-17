@@ -5,8 +5,8 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              "C++ Programming Style Guidelines"
+//              https://geosoft.no/development/cppstyle.html
 // COMPILACIÓN: g++ -g rational_t.cpp main_rational_t.cpp -o main_rational_t
 
 // pauta de estilo [92]: comentarios multilínea usando solo "//"
@@ -66,7 +66,7 @@ int main()
         a.divide(b).write();
 
 
-        // practicado en casa
+        // Nuevas funciones (ejemplos de uso, comentados)
         /*
         cout << "Raiz cuadrada de x: ";
         x.square_root().write();
@@ -94,8 +94,23 @@ int main()
              << (y.is_numerator_greater() ? "true" : "false") << endl;
         cout << "El denominador de y es mayor que el numerador? "
              << (y.is_denominator_greater() ? "true" : "false") << endl;
-
         */
+
+       
+        cout << "Factorial de x: ";
+        try {
+            x.factorial().write();
+        } catch (const std::runtime_error& e) {
+            cerr << e.what() << endl;
+        }
+
+        cout << "Factorial de y: ";
+        try {
+            y.factorial().write();
+        } catch (const std::runtime_error& e) {
+            cerr << e.what() << endl;
+        }
+
 
     } catch (const std::runtime_error& error) {
         cerr << "Error: " << error.what() << endl;

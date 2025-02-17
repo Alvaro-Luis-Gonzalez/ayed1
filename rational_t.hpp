@@ -5,8 +5,8 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              "C++ Programming Style Guidelines"
+//              https://geosoft.no/development/cppstyle.html
 
 // pauta de estilo [92]: comentarios multilínea usando solo "//"
 
@@ -53,13 +53,14 @@ public:
     void write(ostream& = cout) const;
     void read(istream& = cin);
 
-    // practicado en casa
+    // Nuevas funciones (comentadas)
     /*
     rational_t square_root() const;
     rational_t power(int exponent) const;
     bool is_numerator_greater() const;
     bool is_denominator_greater() const;
     */
+   rational_t factorial() const; // Declaración de la función factorial
 
 private:
     // pauta de estilo [11]: nombre de los atributos seguido de "_"

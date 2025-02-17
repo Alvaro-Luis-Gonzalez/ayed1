@@ -5,8 +5,8 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              "C++ Programming Style Guidelines"
+//              https://geosoft.no/development/cppstyle.html
 
 // pauta de estilo [92]: comentarios multilínea usando solo "//"
 
@@ -147,7 +147,7 @@ rational_t::read(istream& is)
 }
 
 
-// practicado en casa
+// Nuevas funciones (comentadas)
 
 /*
 rational_t rational_t::square_root() const {
@@ -176,3 +176,28 @@ bool rational_t::is_denominator_greater() const {
     return den_ > num_;
 }
 */
+
+// Función factorial (solo para racionales que son enteros no negativos)
+rational_t rational_t::factorial() const {
+
+    if (den_ != 1)
+    {
+        if (num_ % den_ != 0){
+            throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
+        }
+    }
+
+
+    int integer_value = num_/den_;
+
+
+    if (integer_value < 0) {
+        throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
+    }
+
+    long long fact = 1; // Usar long long para evitar desbordamiento para factoriales grandes
+    for (int i = 2; i <= integer_value; ++i) {
+        fact *= i;
+    }
+    return rational_t(static_cast<int>(fact), 1);
+}
