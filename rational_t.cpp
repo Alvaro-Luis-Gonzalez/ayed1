@@ -176,27 +176,13 @@ bool rational_t::is_denominator_greater() const {
     return den_ > num_;
 }
 */
+
 rational_t rational_t::factorial() const {
 
-    if (den_ != 1)
-    {
-        if (num_ % den_ != 0){
-            throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
-        }
-    }
-
-
-    int integer_value = num_/den_;
-
-
-    if (integer_value < 0) {
-        throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
-    }
-
     rational_t result(1, 1);
-    rational_t current(num_, den_); 
+    rational_t current(num_, den_);
 
-    for (int i = integer_value; i >= 1; --i) {
+    for (int i = num_; i >= 1; --i) { 
         result = result.multiply(current);
         current.set_num(i - 1);
     }
