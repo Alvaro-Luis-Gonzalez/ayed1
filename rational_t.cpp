@@ -187,9 +187,7 @@ rational_t rational_t::factorial() const {
         }
     }
 
-
     int integer_value = num_/den_;
-
 
     if (integer_value < 0) {
         throw std::runtime_error("El factorial solo está definido para enteros no negativos.");
