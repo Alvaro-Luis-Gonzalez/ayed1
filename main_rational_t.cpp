@@ -38,30 +38,18 @@ int main()
 {
  rational_t a(1, 2), b(3), c;
 
-
-
-
  cout << "a.value()= " << a.value() << endl;
  cout << "b.value()= " << b.value() << endl;
  cout << "c.value()= " << c.value() << endl;
-
-
-
 
  cout << "a: ";
  a.write();
  cout << "b: ";
  b.write();
 
-
-
-
  c.read();
  cout << "c: ";
  c.write();
-
-
-
 
  // FASE II
  rational_t x(1, 8), y(1, 3);
@@ -71,17 +59,13 @@ int main()
  cout << "x < y? " << (x.is_greater(y) ? "true" : "false") << endl;
  cout << "x > y? " << (x.is_less(y) ? "true" : "false") << endl;
 
-
-
-
  // FASE III
 cout << "a + b: ";
 a.add(b).write();
 cout << "b - a: ";
 b.substract(a).write();
 
-
-//practica
+//modificaciones
 cout << "-----------   x >= 1? " << (x.is_one() ? "true" : "false") << endl;
 
 cout << "a * b: ";
@@ -89,8 +73,6 @@ a.multiply(b).write();
 cout << "a / b: ";
 a.divide(b).write();
   return 0;
-
-
 
 }
 
